@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Jura', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+}
+
+img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foreground {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+main {
+    width: 40%;
+    height: 55%;
+    min-width: 450px;
+    min-height: 250px;
+    background-color: #151231;
+    border: 3px solid #45FF41;
+}
+
+.apollo-title {
+    text-align: center;
+    margin: 30px 0;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 2.2em;
+}
+
+.money {
+    color: #45FF41;
+    font-weight: 500;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 1.8em;
+    margin: 20px 15px 0 20px
+}
+
+.elapsed-time {
+    color: #45FF41;
+}
+
+.gros-dev-pierrot {
+    color: red;
+}
+
+.craquages-number {
+    color: #45FF41;
+}
