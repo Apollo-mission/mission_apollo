@@ -76,3 +76,15 @@ h2 {
 .craquages-number {
     color: #45FF41;
 }
+
+@media screen and (max-width: 450px) {
+
+    .foreground {
+        height: 100%;
+    }
+    main {
+        min-width: auto;
+        width: 100%;
+        min-height: auto;
+    }
+}
