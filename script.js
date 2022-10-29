@@ -18,7 +18,9 @@ function countDays() {
 }
 
 function animateValue(id, start, end, duration) {
-  if (start === end) return;
+  const checkPage = document.querySelector('.apollo-title');
+
+  if (start === end || checkPage === null) return;
   let range = end - start;
   let current = start;
   let increment = end > start? 1 : -1;
@@ -41,8 +43,6 @@ const countDown = setInterval(function() {
     const now = new Date().getTime();
   
     const distance = countDownDate - now;
-
-    console.log(now);
   
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -73,7 +73,7 @@ const countDown = setInterval(function() {
   }
 
   function init() {
-    animateValue("amount", 0, 3800, 3000);
+    animateValue("amount", 0, 3800, 5000);
     countDays();
     hideRocket();
   }
