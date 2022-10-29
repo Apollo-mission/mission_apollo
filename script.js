@@ -1,24 +1,24 @@
-function countDays() {
-  const initialDate = new Date(2022, 9, 17); 
-  const now = Date.now();
-  const difference = now - initialDate;
-  const millisecondsPerDay = 24 * 60 * 60 * 1000;
-  const daysSince = Math.floor(difference / millisecondsPerDay);
-
-  const selectTime = document.getElementById('elapsed-time');
-  if (selectTime === null) {
-    clearInterval(countDown);
-    return;
-  }
-  else {
-    console.log(selectTime);
-    selectTime.textContent = daysSince;
-  }
-  
-}
-
 function animateValue(id, start, end, duration) {
   const checkPage = document.querySelector('.apollo-title');
+
+  if (start === end || checkPage === null) return;
+  let range = end - start;
+  let current = start;
+  let increment = end > start? 1 : -1;
+  let stepTime = Math.abs(Math.floor(duration / range));
+  let obj = document.getElementById(id);
+  let timer = setInterval(function() {
+      current += increment;
+      obj.innerHTML = current;
+      if (current == end) {
+          clearInterval(timer);
+      }
+  }, stepTime);
+}
+
+const checkPage = document.querySelector('.apollo-title');
+
+function animateValueB(id, start, end, duration) {
 
   if (start === end || checkPage === null) return;
   let range = end - start;
@@ -39,6 +39,7 @@ function animateValue(id, start, end, duration) {
 const countDownDate = new Date(2023, 0, 26).getTime();
 
 const countDown = setInterval(function() {
+  if (checkPage === null) return;
 
     const now = new Date().getTime();
   
@@ -61,7 +62,7 @@ const countDown = setInterval(function() {
   function hideRocket() {
     const selectMainContainer = document.querySelector('.stats-container');
     const selectRocket = document.querySelector('.take-off-rocket');
-    console.log(selectRocket);
+    
     if(selectRocket === null) {
       return;
     }
@@ -72,9 +73,29 @@ const countDown = setInterval(function() {
     }
   }
 
+  let time = 1;
+  
+  function timer() {
+    if (checkPage === null) return;
+
+    if (time >= 29) {
+      clearInterval(interval);
+      return;
+    }
+    time++;
+    console.log(time);
+
+    const selectCharacter = document.querySelector(`.black-box:nth-child(${time.toString()}) span`);
+    selectCharacter.style.opacity = "1";
+    selectCharacter.style.transform = "translateY(0px)";
+  }
+
+
+  const interval = setInterval(timer, 300);
+
   function init() {
     animateValue("amount", 0, 3800, 5000);
-    countDays();
+    animateValueB("amountB", 0, 3700, 5000);
     hideRocket();
   }
 
