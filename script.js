@@ -4,7 +4,7 @@ function animateValue(id, start, end, duration) {
   if (start === end || checkPage === null) return;
   let range = end - start;
   let current = start;
-  let increment = end > start? 1 : -1;
+  let increment = end > start? 10 : -10;
   let stepTime = Math.abs(Math.floor(duration / range));
   let obj = document.getElementById(id);
   let timer = setInterval(function() {
@@ -23,7 +23,7 @@ function animateValueB(id, start, end, duration) {
   if (start === end || checkPage === null) return;
   let range = end - start;
   let current = start;
-  let increment = end > start? 1 : -1;
+  let increment = end > start? 10 : -10;
   let stepTime = Math.abs(Math.floor(duration / range));
   let obj = document.getElementById(id);
   let timer = setInterval(function() {
