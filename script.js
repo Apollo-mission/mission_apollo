@@ -94,8 +94,8 @@ const countDown = setInterval(function() {
   const interval = setInterval(timer, 300);
 
   function init() {
-    animateValue("amount", 0, 6420, 5000);
-    animateValueB("amountB", 0, 6320, 5000);
+    animateValue("amount", 0, 6431, 5000);
+    animateValueB("amountB", 0, 6331, 5000);
     hideRocket();
   }
 
